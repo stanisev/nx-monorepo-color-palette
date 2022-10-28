@@ -1,9 +1,14 @@
-<div style="text-align: center">
-  <h1>Welcome to color!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-    alt="Nx - Smart, Fast and Extensible Build System"
-  />
+<div class="host">
+  <h2>Color Palette Generator</h2>
+  <div *ngIf="isCopied" class="cdk-popup">Code {{ code }} copied to your clipboard!</div>
+  <div div class="parent">
+   <div class="card-background" *ngFor="let color of colors.colorCodes">
+    <div class="card-block" [style.background-color]="color" (click)="copyText(color)">
+      <div class="child">
+        <h5 class="card-title" (click)="copyText(color)">{{ color }}</h5>
+      </div>
+    </div>
+   </div>
+  </div>
+  <button type="button" class="btn btn-outline-primary sized" (click)="generateRandomCollection()">Generate Palette</button>
 </div>
-<div>Message: {{ hello$ | async | json }}</div>
