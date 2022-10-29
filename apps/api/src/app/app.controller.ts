@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 
 import { Color } from '@color-palette/api-interfaces';
 
@@ -11,5 +11,10 @@ export class AppController {
   @Get('generate-colors')
   getColorData(): Color {
     return this.appService.getColorData();
+  }
+
+  @Get('generate-colors/:color')
+  getColorDataByName(@Param('color') color: string): Color {
+    return this.appService.getColorDataByName(color);
   }
 }

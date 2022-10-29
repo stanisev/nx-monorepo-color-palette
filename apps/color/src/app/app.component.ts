@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Clipboard } from '@angular/cdk/clipboard';
-import { HttpClient } from '@angular/common/http';
 import { Color } from '@color-palette/api-interfaces';
+import { ColorService } from './services/color.service';
 
 @Component({
   selector: 'color-palette-root',
@@ -9,33 +8,25 @@ import { Color } from '@color-palette/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  GET_RANDOM_COLLORS = '/api/generate-colors';
-
-  code = '';
-  isCopied = false;
 
   colors: Color = { colorCodes: ['']};
 
-  constructor(
-    private http: HttpClient,
-    private clipboard: Clipboard) { }
+  constructor(private colorService: ColorService) { }
 
   ngOnInit(): void {
     this.generateRandomCollection();
   }
 
   generateRandomCollection(): void {
-    this.isCopied = false;
-
-    this.http.get<Color>(this.GET_RANDOM_COLLORS).subscribe(
-      result => this.colors = result
+    this.colorService.generateRandomCollection().subscribe(
+      result => { this.colors = result}
     );
   }
 
-  copyText(textToCopy: string): void {
-    this.clipboard.copy(textToCopy);
-    this.code = textToCopy;
-    this.isCopied = true;
+  generateRandomRedColorCollection(colorName: string): void {
+    this.colorService.generateRandomRedColorCollection(colorName).subscribe(
+      result => { this.colors = result}
+    );
   }
 
 }
