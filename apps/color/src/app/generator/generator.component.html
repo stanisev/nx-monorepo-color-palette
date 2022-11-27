@@ -1,0 +1,22 @@
+<div class="host">
+  <div div class="parent">
+    <div class="card-background" *ngFor="let color of colors.colorCodes" data-bs-container="body" placement="top" ngbPopover="Color HEX code copied to clipboard!">
+     <div class="card-block" [style.background-color]="color" [cdkCopyToClipboard]="color">
+       <div class="child">
+         <h5 class="card-title"
+         [cdkCopyToClipboard]="color">{{ color }}</h5>
+       </div>
+     </div>
+    </div>
+   </div>
+
+   <button type="button" class="btn btn-outline-primary sized"
+     (click)="generateRandomCollection()">Generate Palette</button>
+
+   <button type="button" class="btn btn-outline-danger sized"
+   (click)="generateRandomRedColorCollection('red')">Generate Red Palette</button>
+
+   <button type="button" class="btn btn-outline-secondary sized"
+   (click)="generateRandomRedColorCollection('red')">Save Current Palette</button>
+
+</div>
