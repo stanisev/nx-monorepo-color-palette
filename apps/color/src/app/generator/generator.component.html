@@ -1,4 +1,4 @@
-<div class="host">
+<div class="host" *ngIf="loggedIn">
   <div div class="parent">
     <div class="card-background" *ngFor="let color of colors.colorCodes" data-bs-container="body" placement="top" ngbPopover="Color HEX code copied to clipboard!">
      <div class="card-block" [style.background-color]="color" [cdkCopyToClipboard]="color">
@@ -17,6 +17,6 @@
    (click)="generateRandomRedColorCollection('red')">Generate Red Palette</button>
 
    <button type="button" class="btn btn-outline-secondary sized"
-   (click)="generateRandomRedColorCollection('red')">Save Current Palette</button>
+   (click)="saveCurrentPalette()">Save Current Palette</button>
 
 </div>

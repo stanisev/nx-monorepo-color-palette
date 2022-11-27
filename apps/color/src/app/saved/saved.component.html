@@ -1,1 +1,19 @@
-<p>saved works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Palette Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">ColorCodes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of data; let i of data">
+      <button type="button" class="btn btn-outline-primary bt" (click)="update(d.key, 'name', 'description')">Update</button>
+      <input type="text" class="control" id="name" placeholder={{d.value.name}}>
+      <input type="text" class="control" id="description" placeholder={{d.value.description}}>
+      <td *ngFor="let color of d.value.colorCodes" class="CC2">
+        <div class="CC" [style.background-color]="color" placement="right" ngbPopover={{color}} [cdkCopyToClipboard]="color"></div></td>
+      <button type="button" class="btn btn-outline-danger bt" (click)="deletePalette(d.key)">X</button>
+    </tr>
+  </tbody>
+</table>

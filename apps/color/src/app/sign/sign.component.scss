@@ -1,0 +1,79 @@
+.host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: center;
+  align-items: center;
+  text-align: center;
+
+  margin: 10px;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: center;
+
+  margin: 10px;
+  padding: 10px;
+}
+
+.card-background {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+
+  background-color: white;
+
+  margin: 10px;
+
+  border-radius: 10px;
+  width: 200px;
+  height: 350px;
+}
+
+.card-block {
+  border-radius: 10px;
+  width: 175px;
+  height: 275px;
+  padding: 10px;
+}
+
+.child {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  height: 310px;
+}
+
+.sized {
+  width: 500px;
+}
+
+.cdk-popup {
+  background-color: rgb(24, 3, 75);
+  border-radius: 10px;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  width: 400px;
+  height: 30px;
+}
+
+.header {
+  font-weight: 500;
+}
+
+button {
+  margin: 10px;
+}
+
+footer {
+  font-size: 12px;
+}

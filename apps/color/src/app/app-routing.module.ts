@@ -1,3 +1,4 @@
+import { SignComponent } from './sign/sign.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { SavedComponent } from './saved/saved.component';
 import { NgModule } from '@angular/core';
@@ -6,7 +7,8 @@ import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   { path: '', component: GeneratorComponent },
-  { path: 'saved', component: SavedComponent }
+  { path: 'saved', component: SavedComponent },
+  { path: 'sign', component: SignComponent }
 ];
 
 @NgModule({
